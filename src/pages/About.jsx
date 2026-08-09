@@ -50,9 +50,8 @@ const differentiators = [
 
 const stats = [
   { label: 'Projects Completed', value: 500, suffix: '+' },
-  { label: 'Years of Experience', value: 15, suffix: '+' },
+  { label: 'Years of Experience', value: 61, suffix: '+' },
   { label: 'Happy Clients', value: 200, suffix: '+' },
-  { label: 'Expert Engineers', value: 50, suffix: '+' },
 ];
 
 function StatCard({ value, label, suffix, inView }) {
@@ -72,7 +71,7 @@ function StatCard({ value, label, suffix, inView }) {
 }
 
 export default function About() {
-  const heroImage = aboutImages[0] || heroImages[0];
+  const heroImage = aboutImages[2] || aboutImages[0] || heroImages[0];
   const mosaicImages = [...aboutImages, ...heroImages].slice(0, 4);
 
   const storyMotion = useScrollAnimation();
@@ -215,7 +214,7 @@ export default function About() {
               subtitle="Trusted by clients across India for reliable geotechnical data and engineering support."
               center
             />
-            <div ref={statsRef} className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <div ref={statsRef} className="grid gap-6 md:grid-cols-3">
               {stats.map((stat) => (
                 <StatCard
                   key={stat.label}
@@ -240,7 +239,7 @@ export default function About() {
             <div className="grid gap-6 md:grid-cols-3">
               {['Chief Geotechnical Engineer', 'Head of Survey', 'Lab Operations Lead'].map((role) => (
                 <div key={role} className="glass-card rounded-2xl p-6 text-center">
-                  <div className="h-24 w-24 rounded-full bg-[rgba(31,111,120,0.2)] mx-auto" />
+                  <div className="h-24 w-24 rounded-full bg-[rgba(29,78,137,0.15)] mx-auto" />
                   <h4 className="mt-4 font-display text-lg">{role}</h4>
                   <p className="mt-2 text-sm text-[var(--text-secondary)]">Name to be added</p>
                 </div>

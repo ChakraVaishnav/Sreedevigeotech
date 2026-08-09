@@ -48,7 +48,10 @@ export default function Navbar() {
       className="fixed inset-0 w-screen h-screen bg-white z-[1000] overflow-y-auto"
     >
       <div className="flex items-center justify-between px-6 py-5 border-b border-[var(--border-subtle)]">
-        <span className="font-display text-lg tracking-[0.2em]">SREEDEVIGEOTECH</span>
+        <span className="flex items-center gap-2">
+          <img src="/logo.png" alt="Sreedevigeotech" className="h-9 w-9 rounded-full" />
+          <span className="font-display text-lg tracking-[0.2em]">SREEDEVIGEOTECH</span>
+        </span>
         <button
           className="p-2 text-gold"
           onClick={() => setOpen(false)}
@@ -96,14 +99,17 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all ${
         scrolled
-          ? 'bg-[rgba(247,247,244,0.96)] backdrop-blur border-b border-[var(--border-subtle)]'
-          : 'bg-white/95 backdrop-blur border-b border-[var(--border-subtle)] lg:bg-transparent lg:backdrop-blur-0 lg:border-b-0'
+          ? 'bg-[rgba(247,248,250,0.96)] backdrop-blur border-b border-[var(--border-subtle)]'
+          : 'bg-[rgba(247,248,250,0.96)] backdrop-blur border-b border-[var(--border-subtle)]'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link to="/" className="flex flex-col" data-cursor="link">
-          <span className="font-display text-xl tracking-[0.15em]">SREEDEVIGEOTECH</span>
-          <span className="h-[2px] w-16 bg-gold mt-1" />
+        <Link to="/" className="flex items-center gap-3" data-cursor="link">
+          <img src="src\assets\favicon\NavbarIcon.png" alt="Sreedevigeotech" className="h-10 w-10 rounded-full" />
+          <span className="flex flex-col">
+            <span className="font-display text-xl tracking-[0.15em]">SREEDEVIGEOTECH</span>
+            <span className="h-[2px] w-16 bg-gold mt-1" />
+          </span>
         </Link>
         <nav className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (

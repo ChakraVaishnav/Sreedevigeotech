@@ -20,14 +20,22 @@ const services = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[var(--bg-secondary)] border-t border-[rgba(31,111,120,0.35)] mt-16">
+    <footer className="relative bg-[var(--bg-secondary)] border-t border-[rgba(29,78,137,0.3)] mt-16">
       <div className="absolute inset-0 opacity-30 bg-grid" aria-hidden="true" />
       <div className="relative max-w-7xl mx-auto px-6 py-14 grid gap-10 lg:grid-cols-[1.2fr_1fr_1fr]">
         <div>
-          <h3 className="font-display text-2xl">SREEDEVIGEOTECH</h3>
+          <div className="flex items-center gap-3">
+            <img src="src\assets\favicon\favicon.png" alt="Sree Devi Engineering Enterprises" className="h-12 w-12 rounded-full" />
+            <div>
+              <h3 className="font-display text-2xl">SREEDEVIGEOTECH</h3>
+              <p className="text-xs uppercase tracking-[0.25em] text-[var(--text-secondary)]">
+                Sree Devi Engineering Enterprises
+              </p>
+            </div>
+          </div>
           <p className="mt-4 text-[var(--text-secondary)] max-w-sm">
             Precision geotechnical engineering and subsurface intelligence for infrastructure, energy, and
-            urban development projects across India.
+            urban development projects across India, since 1965.
           </p>
           <div className="mt-6 text-sm text-[var(--text-secondary)] space-y-2">
             <p>Phone: +91 90000 00000</p>

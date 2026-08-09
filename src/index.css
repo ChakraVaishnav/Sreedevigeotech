@@ -1,18 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Barlow+Condensed:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --bg-primary: #F7F7F4;
+  --bg-primary: #F7F8FA;
   --bg-secondary: #FFFFFF;
   --bg-card: #FFFFFF;
-  --accent-gold: #1F6F78;
-  --accent-gold-light: #4C9AA3;
+  --accent-gold: #1D4E89;
+  --accent-gold-light: #4C7FC2;
   --accent-blue: #1D4ED8;
-  --text-primary: #1B2333;
-  --text-secondary: #5F6B7A;
+  --accent-silver: #9CA3AF;
+  --text-primary: #0B2242;
+  --text-secondary: #5B6672;
   --border-subtle: #E2E6EA;
 }
 
@@ -29,7 +30,7 @@ html {
 body {
   background: var(--bg-primary);
   color: var(--text-primary);
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   cursor: none;
   overflow-x: hidden;
 }
@@ -50,7 +51,7 @@ a {
 }
 
 ::selection {
-  background: rgba(31, 111, 120, 0.2);
+  background: rgba(29, 78, 137, 0.2);
   color: var(--text-primary);
 }
 
@@ -68,21 +69,21 @@ a {
 }
 
 .bg-grid {
-  background-image: linear-gradient(rgba(31, 111, 120, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(31, 111, 120, 0.1) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(29, 78, 137, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29, 78, 137, 0.1) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
 .bg-ink {
-  background-image: radial-gradient(circle at top left, rgba(31, 111, 120, 0.18), transparent 45%),
-    radial-gradient(circle at 85% 10%, rgba(29, 78, 216, 0.08), transparent 45%),
-    radial-gradient(circle at 20% 80%, rgba(31, 111, 120, 0.2), transparent 45%);
+  background-image: radial-gradient(circle at top left, rgba(29, 78, 137, 0.16), transparent 45%),
+    radial-gradient(circle at 85% 10%, rgba(156, 163, 175, 0.18), transparent 45%),
+    radial-gradient(circle at 20% 80%, rgba(29, 78, 137, 0.18), transparent 45%);
 }
 
 .glass-card {
   background: rgba(255, 255, 255, 0.86);
   border: 1px solid var(--border-subtle);
-  box-shadow: 0 18px 45px rgba(27, 35, 51, 0.12);
+  box-shadow: 0 18px 45px rgba(11, 34, 66, 0.12);
   backdrop-filter: blur(12px);
 }
 
@@ -96,7 +97,7 @@ a {
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
-  color: #102326;
+  color: #F7F8FA;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -123,8 +124,8 @@ a {
 }
 
 .btn-outline:hover {
-  background: rgba(31, 111, 120, 0.12);
-  box-shadow: 0 0 24px rgba(31, 111, 120, 0.25);
+  background: rgba(29, 78, 137, 0.1);
+  box-shadow: 0 0 24px rgba(29, 78, 137, 0.25);
 }
 
 .hero-image {
@@ -140,9 +141,9 @@ a {
   .hero-scrim {
     background: linear-gradient(
       180deg,
-      rgba(247, 247, 244, 0.7) 0%,
-      rgba(247, 247, 244, 0.45) 45%,
-      rgba(247, 247, 244, 0.2) 100%
+      rgba(247, 248, 250, 0.7) 0%,
+      rgba(247, 248, 250, 0.45) 45%,
+      rgba(247, 248, 250, 0.2) 100%
     );
   }
 }
@@ -174,14 +175,14 @@ a {
 .cursor-ring {
   width: 32px;
   height: 32px;
-  border: 1px solid rgba(31, 111, 120, 0.5);
+  border: 1px solid rgba(156, 163, 175, 0.6);
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .cursor-ring.hover {
   transform: translate(-50%, -50%) scale(1.6);
   border-color: var(--accent-gold);
-  box-shadow: 0 0 18px rgba(31, 111, 120, 0.45);
+  box-shadow: 0 0 18px rgba(29, 78, 137, 0.45);
 }
 
 .marquee {
@@ -271,16 +272,16 @@ a {
 }
 
 .overlay-light {
-  background: rgba(247, 247, 244, 0.45);
+  background: rgba(247, 248, 250, 0.45);
 }
 
 .hero-scrim {
   background: linear-gradient(
     90deg,
-    rgba(247, 247, 244, 0.78) 0%,
-    rgba(247, 247, 244, 0.6) 36%,
-    rgba(247, 247, 244, 0.25) 70%,
-    rgba(247, 247, 244, 0) 100%
+    rgba(247, 248, 250, 0.78) 0%,
+    rgba(247, 248, 250, 0.6) 36%,
+    rgba(247, 248, 250, 0.25) 70%,
+    rgba(247, 248, 250, 0) 100%
   );
 }
 

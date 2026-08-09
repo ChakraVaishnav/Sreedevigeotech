@@ -4,18 +4,20 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        display: ['Playfair Display', 'serif'],
-        condensed: ['Barlow Condensed', 'sans-serif'],
-        body: ['DM Sans', 'sans-serif'],
+        display: ['Cormorant Garamond', 'serif'],
+        condensed: ['Oswald', 'sans-serif'],
+        body: ['Inter', 'sans-serif'],
       },
       colors: {
-        gold: '#1F6F78',
-        'gold-light': '#4C9AA3',
-        navy: '#1B2333',
-        'navy-light': '#2A3546',
+        gold: '#1D4E89',
+        'gold-light': '#4C7FC2',
+        navy: '#0B2242',
+        'navy-light': '#173A63',
+        silver: '#9CA3AF',
+        'silver-light': '#D3D7DC',
       },
       boxShadow: {
-        glow: '0 0 25px rgba(31, 111, 120, 0.25)',
+        glow: '0 0 25px rgba(29, 78, 137, 0.25)',
       },
     },
   },

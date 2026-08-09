@@ -79,7 +79,7 @@ const clients = [
 
 const heroStats = [
   { label: 'Projects', value: 500, suffix: '+' },
-  { label: 'Years', value: 15, suffix: '+' },
+  { label: 'Years', value: 61, suffix: '+' },
   { label: 'Clients', value: 200, suffix: '+' },
 ];
 
@@ -158,7 +158,7 @@ export default function Home() {
                 variants={heroItem}
                 className="font-condensed uppercase tracking-[0.28em] text-gold text-xs sm:text-sm"
               >
-                TRUSTED SINCE 2008 - PRECISION ENGINEERING
+                TRUSTED SINCE 1965 - PRECISION ENGINEERING
               </motion.p>
               <motion.h1
                 variants={heroItem}
@@ -284,7 +284,7 @@ export default function Home() {
                 variants={aboutRight.variants}
                 className="relative"
               >
-                <div className="absolute -inset-4 border border-[rgba(31,111,120,0.25)] rounded-3xl" />
+                <div className="absolute -inset-4 border border-[rgba(29,78,137,0.25)] rounded-3xl" />
                 <img
                   src={aboutImages[0] || heroImages[0]}
                   alt="Sreedevigeotech team on site"
@@ -376,7 +376,7 @@ export default function Home() {
             <div className="relative overflow-hidden rounded-3xl bg-[var(--bg-card)] px-8 py-16 text-center">
               <div className="absolute inset-0 bg-grid opacity-20" />
               <div
-                className="absolute top-10 left-10 h-24 w-24 border border-[rgba(31,111,120,0.45)] rounded-full"
+                className="absolute top-10 left-10 h-24 w-24 border border-[rgba(29,78,137,0.45)] rounded-full"
                 style={{ animation: 'float 6s ease-in-out infinite' }}
               />
               <div
