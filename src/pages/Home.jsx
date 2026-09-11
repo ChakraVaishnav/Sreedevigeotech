@@ -65,16 +65,15 @@ const services = [
 ];
 
 const clients = [
-  'NHAI',
-  'RRDC AP',
-  'L&T Construction',
-  'IRCON',
-  'MEIL',
-  'NCC Limited',
-  'Shapoorji Pallonji',
-  'Afcons Infrastructure',
-  'Megha Engineering',
-  'KMC Constructions',
+  { name: 'NHAI', logo: '/logos/nhai.png' },
+  { name: 'L&T Construction', logo: '/logos/lt.svg' },
+  { name: 'IRCON', logo: '/logos/ircon.png' },
+  { name: 'MEIL', logo: '/logos/meil.png' },
+  { name: 'NCC Limited', logo: '/logos/ncc.png' },
+  { name: 'Shapoorji Pallonji', logo: '/logos/shapoorji.svg' },
+  { name: 'Afcons Infrastructure', logo: '/logos/afcons.svg' },
+  { name: 'Megha Engineering', logo: '/logos/meil.png' },
+  { name: 'KMC Constructions', logo: '/logos/kmc.png' },
 ];
 
 const heroStats = [
@@ -345,17 +344,26 @@ export default function Home() {
             />
           </div>
           <div className="mt-10 space-y-6">
-            {[0, 1].map((row) => (
-              <div key={row} className={`marquee marquee-fade ${row === 1 ? 'reverse' : ''}`}>
+            {[0].map((row) => (
+              <div key={row} className={`marquee marquee-fade ${row === 1 ? '' : ''}`}>
                 <div className="marquee-track">
                   {[...clients, ...clients].map((client, index) => (
                     <div
-                      key={`${client}-${index}`}
+                      key={`${client.name}-${index}`}
                       className="flex flex-col items-center justify-center w-48 h-24 border border-[var(--border-subtle)] rounded-xl bg-[var(--bg-card)] shadow-sm"
                     >
-                      <div className="w-16 h-8 bg-black/10 rounded" />
+                      {client.logo ? (
+                        <img
+                          src={client.logo}
+                          alt={`${client.name} logo`}
+                          loading="lazy"
+                          className="max-w-24 max-h-10 object-contain"
+                        />
+                      ) : (
+                        <div className="w-16 h-8 bg-black/10 rounded" />
+                      )}
                       <p className="mt-3 text-xs uppercase tracking-[0.3em] text-[var(--text-secondary)]">
-                        {client}
+                        {client.name}
                       </p>
                     </div>
                   ))}
@@ -375,14 +383,6 @@ export default function Home() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="relative overflow-hidden rounded-3xl bg-[var(--bg-card)] px-8 py-16 text-center">
               <div className="absolute inset-0 bg-grid opacity-20" />
-              <div
-                className="absolute top-10 left-10 h-24 w-24 border border-[rgba(29,78,137,0.45)] rounded-full"
-                style={{ animation: 'float 6s ease-in-out infinite' }}
-              />
-              <div
-                className="absolute bottom-6 right-16 h-16 w-16 border border-[rgba(29,78,216,0.45)] rotate-12"
-                style={{ animation: 'float 7s ease-in-out infinite' }}
-              />
               <div className="relative">
                 <h3 className="font-display text-3xl sm:text-4xl">Have a Project in Mind?</h3>
                 <p className="mt-4 text-[var(--text-secondary)] max-w-2xl mx-auto">

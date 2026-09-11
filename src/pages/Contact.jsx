@@ -12,6 +12,9 @@ const services = [
   'Pile Foundation',
 ];
 
+// TODO: replace with the owner's actual WhatsApp number (country code, digits only)
+const WHATSAPP_NUMBER = '919000000000';
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -28,8 +31,34 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [event.target.name]: event.target.value }));
   };
 
+  const buildMessage = (data) => {
+    const lines = [
+      '*New Project Enquiry — Sreedevigeotech Website*',
+      '',
+      `*Name:* ${data.name}`,
+      data.company ? `*Company:* ${data.company}` : null,
+      `*Email:* ${data.email}`,
+      data.phone ? `*Phone:* ${data.phone}` : null,
+      `*Service Required:* ${data.service}`,
+      data.location ? `*Project Location:* ${data.location}` : null,
+      '',
+      '*Message:*',
+      data.message || '-',
+    ].filter(Boolean);
+
+    return lines.join('\n');
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    const message = buildMessage(formData);
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+    // Opens WhatsApp (app on mobile, web.whatsapp.com on desktop) with the
+    // message pre-filled — the user just presses Send there.
+    window.open(url, '_blank', 'noopener,noreferrer');
+
     setSubmitted(true);
   };
 
@@ -152,10 +181,12 @@ export default function Contact() {
                     className="w-full rounded-xl bg-[var(--bg-primary)] border border-[var(--border-subtle)] px-4 py-3 text-sm focus:outline-none focus:border-gold"
                   />
                   <button type="submit" className="btn-gold w-full py-3 rounded-full font-semibold" data-cursor="link">
-                    {submitted ? 'Message Sent' : 'Send Message'}
+                    {submitted ? 'Opening WhatsApp…' : 'Send Message via WhatsApp'}
                   </button>
                   {submitted ? (
-                    <p className="text-sm text-gold">Thanks for reaching out. We will contact you shortly.</p>
+                    <p className="text-sm text-gold">
+                      WhatsApp is opening with your details pre-filled — just press Send there to deliver your message.
+                    </p>
                   ) : null}
                 </form>
               </div>
