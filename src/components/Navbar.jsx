@@ -49,7 +49,7 @@ export default function Navbar() {
     >
       <div className="flex items-center justify-between px-6 py-5 border-b border-[var(--border-subtle)]">
         <span className="flex items-center gap-2">
-          <img src="/logo.png" alt="Sreedevigeotech" className="h-9 w-9 rounded-full" />
+          <img src="/navbar-icon.png" alt="Sreedevigeotech" className="h-9 w-9 rounded-full" />
           <span className="font-display text-lg tracking-[0.2em]">SREEDEVIGEOTECH</span>
         </span>
         <button
@@ -105,7 +105,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3" data-cursor="link">
-          <img src="src\assets\favicon\NavbarIcon.png" alt="Sreedevigeotech" className="h-10 w-10 rounded-full" />
+          <img src="/navbar-icon.png" alt="Sreedevigeotech" className="h-10 w-10 rounded-full" />
           <span className="flex flex-col">
             <span className="font-display text-xl tracking-[0.15em]">SREEDEVIGEOTECH</span>
             <span className="h-[2px] w-16 bg-gold mt-1" />

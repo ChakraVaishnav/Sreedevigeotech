@@ -25,7 +25,7 @@ export default function Footer() {
       <div className="relative max-w-7xl mx-auto px-6 py-14 grid gap-10 lg:grid-cols-[1.2fr_1fr_1fr]">
         <div>
           <div className="flex items-center gap-3">
-            <img src="src\assets\favicon\favicon.png" alt="Sree Devi Engineering Enterprises" className="h-12 w-12 rounded-full" />
+            <img src="/navbar-icon.png" alt="Sree Devi Engineering Enterprises" className="h-12 w-12 rounded-full" />
             <div>
               <h3 className="font-display text-2xl">SREEDEVIGEOTECH</h3>
               <p className="text-xs uppercase tracking-[0.25em] text-[var(--text-secondary)]">
