@@ -6,6 +6,7 @@ import SectionHeading from '../components/SectionHeading';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import { useInView } from 'react-intersection-observer';
 import useCountUp from '../hooks/useCountUp';
+import usePageMeta from '../hooks/usePageMeta';
 
 const values = [
   {
@@ -71,6 +72,12 @@ function StatCard({ value, label, suffix, inView }) {
 }
 
 export default function About() {
+  usePageMeta({
+    title: 'About Us | Sreedevigeotech — Geotechnical Engineering Since 1965',
+    description:
+      'Sree Devi Engineering Enterprises has delivered 500+ geotechnical investigations across India for six decades — advanced equipment, certified labs, and a multi-disciplinary engineering team.',
+  });
+
   const heroImage = aboutImages[2] || aboutImages[0] || heroImages[0];
   const mosaicImages = [...aboutImages, ...heroImages].slice(0, 4);
 

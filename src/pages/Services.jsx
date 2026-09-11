@@ -5,6 +5,7 @@ import { aboutImages, heroImages } from '../utils/imageImports';
 import PageTransition from '../components/PageTransition';
 import SectionHeading from '../components/SectionHeading';
 import useScrollAnimation from '../hooks/useScrollAnimation';
+import usePageMeta from '../hooks/usePageMeta';
 
 const services = [
   {
@@ -187,6 +188,12 @@ function ServiceSection({ service, index }) {
 }
 
 export default function Services() {
+  usePageMeta({
+    title: 'Geotechnical Services | Investigation, Soil Testing, Surveys — Sreedevigeotech',
+    description:
+      'Borehole drilling, SPT/CPT testing, soil & rock laboratory testing, topographic & contour surveys, geophysical investigations, hydrographic surveys and pile foundation design across India.',
+  });
+
   const location = useLocation();
 
   useEffect(() => {

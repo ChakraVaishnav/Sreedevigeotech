@@ -18,6 +18,7 @@ import AnimatedCard from '../components/AnimatedCard';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import { useInView } from 'react-intersection-observer';
 import useCountUp from '../hooks/useCountUp';
+import usePageMeta from '../hooks/usePageMeta';
 
 const services = [
   {
@@ -99,6 +100,12 @@ function StatItem({ value, label, suffix, inView }) {
 }
 
 export default function Home() {
+  usePageMeta({
+    title: 'Sreedevigeotech | Geotechnical Investigation, Soil Testing & Survey Company in India',
+    description:
+      'Precision geotechnical engineering since 1965 — soil & rock testing, topographic, geophysical & hydrographic surveys, and pile foundation design trusted by NHAI, L&T, IRCON and 200+ clients across India.',
+  });
+
   const [current, setCurrent] = useState(0);
   const heroImage = heroImages.length ? heroImages[current] : '';
 

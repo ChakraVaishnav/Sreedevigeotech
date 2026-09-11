@@ -4,8 +4,15 @@ import { ArrowLeft, ArrowRight, X, ZoomIn } from 'lucide-react';
 import { galleryItems } from '../utils/imageImports';
 import PageTransition from '../components/PageTransition';
 import SectionHeading from '../components/SectionHeading';
+import usePageMeta from '../hooks/usePageMeta';
 
 export default function Gallery() {
+  usePageMeta({
+    title: 'Project Gallery | Sreedevigeotech — Field Work, Labs & Highlights',
+    description:
+      'A visual record of our geotechnical investigations, soil testing laboratories, surveys and engineering support across Indian infrastructure projects.',
+  });
+
   const [lightboxIndex, setLightboxIndex] = useState(null);
 
   useEffect(() => {
@@ -28,6 +35,7 @@ export default function Gallery() {
         <section className="py-16">
           <div className="max-w-6xl mx-auto px-6">
             <SectionHeading
+              as="h1"
               eyebrow="GALLERY"
               title="Field Work, Labs, and Project Highlights"
               subtitle="A visual record of our investigations, surveys, and engineering support across India."
@@ -43,7 +51,7 @@ export default function Gallery() {
                 >
                   <img
                     src={item.src}
-                    alt="Sreedevigeotech gallery"
+                    alt={`Sreedevigeotech ${item.category} — ${item.group === 'Projects' ? 'project' : item.group.toLowerCase()} photo from field operations in India`}
                     loading="lazy"
                     className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />

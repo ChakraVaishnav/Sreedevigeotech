@@ -6,6 +6,7 @@ import PageTransition from '../components/PageTransition';
 import SectionHeading from '../components/SectionHeading';
 import { useInView } from 'react-intersection-observer';
 import useCountUp from '../hooks/useCountUp';
+import usePageMeta from '../hooks/usePageMeta';
 
 
 const stats = [
@@ -126,6 +127,12 @@ function ProjectModal({ project, onClose }) {
 }
 
 export default function Projects() {
+  usePageMeta({
+    title: 'Projects | Sreedevigeotech — 500+ Geotechnical Investigations Across India',
+    description:
+      'Geotechnical investigations for national highways, flyovers, irrigation, ports and landmark buildings — Polavaram, NH projects, Durga Gudi Flyover and more.',
+  });
+
   const [selectedProject, setSelectedProject] = useState(null);
   const [statsRef, statsInView] = useInView({ triggerOnce: true, threshold: 0.3 });
 

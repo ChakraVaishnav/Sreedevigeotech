@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 
-export default function SectionHeading({ eyebrow, title, subtitle, center = false }) {
+export default function SectionHeading({ eyebrow, title, subtitle, center = false, as: Tag = 'h2' }) {
   const { ref, controls, variants } = useScrollAnimation();
 
   const underlineVariants = {
@@ -22,9 +22,9 @@ export default function SectionHeading({ eyebrow, title, subtitle, center = fals
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="mt-3 font-display text-3xl sm:text-4xl lg:text-5xl">
+      <Tag className="mt-3 font-display text-3xl sm:text-4xl lg:text-5xl">
         {title}
-      </h2>
+      </Tag>
       <motion.span
         initial="hidden"
         animate={controls}

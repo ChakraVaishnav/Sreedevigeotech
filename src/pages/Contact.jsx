@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Clock, Mail, MapPin, Phone } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 import SectionHeading from '../components/SectionHeading';
+import usePageMeta from '../hooks/usePageMeta';
 
 const services = [
   'Geo-technical Investigation',
@@ -16,6 +17,12 @@ const services = [
 const WHATSAPP_NUMBER = '919000000000';
 
 export default function Contact() {
+  usePageMeta({
+    title: 'Contact Us | Sreedevigeotech — Get a Geotechnical Consultation',
+    description:
+      'Get a tailored geotechnical consultation for your infrastructure project. Call, email or WhatsApp Sree Devi Engineering Enterprises, Hyderabad — Mon-Sat 9 AM to 7 PM.',
+  });
+
   const [formData, setFormData] = useState({
     name: '',
     company: '',
@@ -68,6 +75,7 @@ export default function Contact() {
         <section className="py-16">
           <div className="max-w-6xl mx-auto px-6">
             <SectionHeading
+              as="h1"
               eyebrow="CONTACT"
               title="Let's Start a Conversation"
               subtitle="Share your project details and our team will respond with the right geotechnical solution."
